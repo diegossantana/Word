@@ -1,0 +1,28 @@
+.bem-vindo {
+  padding-left: 4%;
+  padding-right: 5%;
+}
+
+.login {
+  margin-left: auto;
+  background-color: var(--primary);
+  /* Define a cor de fundo igual à cor primária da toolbar */
+  color: white;
+  /* Define a cor do ícone como branco */
+  padding: 8px;
+  /* Adiciona um preenchimento ao redor do ícone para melhor visualização */
+  border-radius: 50%;
+  /* Aplica um raio de borda para arredondar o ícone */
+}
+
+.main-content {
+  padding-top: 20px;
+  display: flex;
+  /* Utiliza o sistema de layout flexbox */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  height: 50vh;
+  /* Define a altura para ocupar toda a altura da viewport */
+}
