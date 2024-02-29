@@ -1,3 +1,4 @@
+import { RegisteruserComponent } from './login/registeruser/registeruser.component';
 import { BemvindoComponent } from './bemvindo/bemvindo.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: '', component: BemvindoComponent },
   { path: 'bem-vindo', component: BemvindoComponent },
   { path: 'palavras', component: WordsComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegisteruserComponent }
 ];
 
 @NgModule({

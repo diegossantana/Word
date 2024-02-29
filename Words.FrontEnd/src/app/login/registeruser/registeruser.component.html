@@ -1,0 +1,24 @@
+<h2>Registro de Usuário</h2>
+<form>
+  <div class="email">
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="senha">
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+
+  <div class="senha">
+    <label for="confirmPassword">Confirmar Senha:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+  </div>
+
+  <div class="mostrar-senha">
+    <label>Mostrar Senha</label>
+    <input type="checkbox" id="showPassword" (change)="toggleShowPassword()">
+  </div>
+
+  <button type="submit">Registrar</button>
+</form>
