@@ -1,28 +1,51 @@
 .bem-vindo {
-  padding-left: 4%;
-  padding-right: 5%;
+  padding-left: 2%;
+  padding-right: 3%;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.palavras {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .login {
   margin-left: auto;
   background-color: var(--primary);
-  /* Define a cor de fundo igual à cor primária da toolbar */
   color: white;
-  /* Define a cor do ícone como branco */
   padding: 8px;
-  /* Adiciona um preenchimento ao redor do ícone para melhor visualização */
+  border: 0;
   border-radius: 50%;
-  /* Aplica um raio de borda para arredondar o ícone */
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  padding-right: 3%;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
-.main-content {
-  padding-top: 20px;
-  display: flex;
-  /* Utiliza o sistema de layout flexbox */
-  justify-content: center;
-  /* Centraliza horizontalmente */
-  align-items: center;
-  /* Centraliza verticalmente */
-  height: 50vh;
-  /* Define a altura para ocupar toda a altura da viewport */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
 }

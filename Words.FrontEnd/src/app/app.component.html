@@ -1,16 +1,19 @@
 <mat-toolbar color="primary">
-  <span class="bem-vindo">Bem-vindo</span>
-  <span class="palavras">Palavras</span>
+  <span class="bem-vindo">
+    <a routerLink="/">Bem-vindo</a>
+  </span>
+  <span class="palavras">
+    <a mat-button routerLink="/palavras">Palavras</a>
+  </span>
   <button class="login" mat-icon-button aria-label="Login">
-    <i class="fa fa-user" aria-hidden="true"></i> <!-- Ícone de login do Font Awesome -->
+    <a routerLink="/login"><i class="fa fa-user" aria-hidden="true"></i></a>
   </button>
 </mat-toolbar>
 
-<div class="main-content">
-  <h1>Bem-vindo à minha página Angular!</h1>
-  <br>
+<router-outlet></router-outlet>
 
-
-
-  <p>Aqui está o conteúdo principal da página.</p>
-</div>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 IS916. Todos os direitos reservados.</p>
+  </div>
+</footer>
