@@ -11,18 +11,20 @@ import { MatMenuModule } from '@angular/material/menu';
 import { WordsComponent } from './words/words.component';
 import { LoginComponent } from './login/login.component';
 import { BemvindoComponent } from './bemvindo/bemvindo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
-      WordsComponent,
-      LoginComponent,
-      BemvindoComponent
-   ],
+    WordsComponent,
+    LoginComponent,
+    BemvindoComponent
+  ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule
