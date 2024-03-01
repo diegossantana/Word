@@ -1,9 +1,13 @@
-<!--
-<h1>Gerenciamento de Palavras</h1>
+<div class="titulo">
+  <h1>Gerenciamento de Palavras</h1>
+</div>
 
-<button mat-raised-button color="primary" (click)="adicionarPalavra()">Adicionar Palavra</button>
-<button mat-raised-button color="primary" (click)="consultarPorId()">Consultar por ID</button>
-<button mat-raised-button color="primary" (click)="consultarPorPalavra()">Consultar por Palavra</button>
-<button mat-raised-button color="primary" (click)="editarPalavra()">Editar Palavra</button>
-<button mat-raised-button color="warn" (click)="excluirPalavra()">Excluir Palavra</button>
- -->
+<div class="botoes">
+  <button mat-raised-button color="primary" routerLink="/adicionar" (click)="adicionarPalavra()">Adicionar Palavra</button>
+  <button mat-raised-button color="primary" routerLink="/consultarId" (click)="consultarPorId()">Consultar por ID</button>
+  <button mat-raised-button color="primary" routerLink="/consultarPalavra" (click)="consultarPorPalavra()">Consultar por Palavra</button>
+  <button mat-raised-button color="primary" routerLink="/editar" (click)="editarPalavra()">Editar Palavra</button>
+  <button mat-raised-button color="warn" routerLink="/excluir" (click)="excluirPalavra()">Excluir Palavra</button>
+</div>
+
+<router-outlet></router-outlet>

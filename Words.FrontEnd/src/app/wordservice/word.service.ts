@@ -1,0 +1,69 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { throwToolbarMixedModesError } from '@angular/material/toolbar';
+import { catchError, Observable, throwError } from 'rxjs';
+import { Word } from '../Word';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class WordService {
+
+  private baseUrl = 'https://localhost:7005/api/Word';
+
+  constructor(private http: HttpClient) { }
+
+  getWords(): Observable<Word[]> {
+    return this.http.get<Word[]>(`${this.baseUrl}`).pipe(
+      catchError(error => {
+        console.error('Ocorreu um erro:', error);
+        return throwError('Ocorreu um erro ao obter as palavras.');
+      })
+    );
+  }
+
+  getWordById(id: number): Observable<Word> {
+    return this.http.get<Word>(`${this.baseUrl}/id/${id}`).pipe(
+      catchError(error => {
+        console.error('Ocorreu um erro:', error);
+        return throwError('Ocorreu um erro ao obter a palavra por Id.');
+      })
+    );
+  }
+
+  getWordByName(name: string): Observable<Word> {
+    return this.http.get<Word>(`${this.baseUrl}/name/${name}`).pipe(
+      catchError(error => {
+        console.error('Ocorreu um erro:', error);
+        return throwError('Ocorreu um erro ao obter a palavra por Nome.');
+      })
+    );
+  }
+
+  addWord(word: Word): Observable<Word> {
+    return this.http.post<Word>(`${this.baseUrl}`, word).pipe(
+      catchError(error => {
+        console.error('Ocorreu um erro:', error);
+        return throwError('Ocorreu um erro ao adicionar a palavra. Por favor, tente novamente.');
+      })
+    );
+  }
+
+  updateWord(id: number, word: Word): Observable<void> {
+    return this.http.put<void>(`${this.baseUrl}/${id}`, word).pipe(
+      catchError(error => {
+        console.error('Ocorreu um erro:', error);
+        return throwError('Ocorreu um erro ao atualizar a palavra. Por favor, tente novamente.');
+      })
+    );
+  }
+
+  deleteWord(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`).pipe(
+      catchError(error => {
+        console.error('Ocorreu um erro:', error);
+        return throwError('Ocorreu um erro ao excluir a palavra. Por favor, tente novamente.');
+      })
+    );
+  }
+}

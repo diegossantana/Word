@@ -1,3 +1,4 @@
+import { AddwordComponent } from './words/addword/addword.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,24 +11,30 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { WordsComponent } from './words/words.component';
 import { LoginComponent } from './login/login.component';
-import { BemvindoComponent } from './bemvindo/bemvindo.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
     AppComponent,
     WordsComponent,
     LoginComponent,
-    BemvindoComponent
+    WelcomeComponent,
+    AddwordComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
-    MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatFormFieldModule,
+    MatMenuModule,
+    MatToolbarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

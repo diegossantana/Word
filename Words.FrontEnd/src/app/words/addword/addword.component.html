@@ -1,0 +1,5 @@
+<form [formGroup]="palavraForm" (ngSubmit)="onSubmit()">
+  <label for="name"><h2>Palavra:</h2></label>
+  <input type="text" id="name" formControlName="name">
+  <button type="submit">Adicionar Palavra</button>
+</form>
