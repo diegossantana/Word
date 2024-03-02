@@ -9,7 +9,8 @@ import { Word } from '../Word';
 })
 export class WordService {
 
-  private baseUrl = 'https://localhost:7005/api/Word';
+  /* private baseUrl = 'https://localhost:7005/api/Word'; */
+  private baseUrl = 'https://localhost:44363/api/Word';
 
   constructor(private http: HttpClient) { }
 
