@@ -12,10 +12,9 @@ export class NotificationService {
   mostrarFeedback(mensagem: string, sucesso: boolean) {
 
     if (sucesso) {
-      this.toastr.success(mensagem, 'Sucesso', { timeOut: 3000, progressBar: true });
-      this.location.back();
+      this.toastr.success(mensagem, 'Sucesso', { timeOut: 10000, progressBar: true });
     } else {
-      this.toastr.error(mensagem, 'Erro', { timeOut: 3000, progressBar: true });
+      this.toastr.error(mensagem, 'Erro', { timeOut: 10000, progressBar: true });
     }
   }
 }

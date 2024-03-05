@@ -1,3 +1,4 @@
+import { WordcardresultComponent } from './component/words/wordcardresult/wordcardresult.component';
 import { WordresultComponent } from './component/words/wordresult/wordresult.component';
 import { UpdatewordComponent } from './component/words/updateword/updateword.component';
 import { DeletewordComponent } from './component/words/deleteword/deleteword.component';
@@ -11,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -34,6 +36,7 @@ import { CommonModule } from '@angular/common';
     UpdatewordComponent,
     WelcomeComponent,
     WordsComponent,
+    WordcardresultComponent,
     WordresultComponent,
   ],
   imports: [
@@ -43,6 +46,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    MatCardModule,
     MatIconModule,
     MatFormFieldModule,
     MatMenuModule,

@@ -5,3 +5,5 @@
   <input type="text" id="name" formControlName="name">
   <button type="submit">Consultar Palavra</button>
 </form>
+
+<app-wordcardresult *ngIf="wordFounded" [word]="wordFounded"></app-wordcardresult>

@@ -1,7 +1,9 @@
+import { WordcardresultComponent } from './../wordcardresult/wordcardresult.component';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NotificationService } from 'src/app/service/notificationservice/notification.service';
 import { WordService } from 'src/app/service/wordservice/word.service';
+import { Word } from 'src/app/model/Word';
 
 @Component({
   selector: 'app-searchname',
@@ -10,6 +12,7 @@ import { WordService } from 'src/app/service/wordservice/word.service';
 })
 export class SearchnameComponent implements OnInit {
   consultarForm: FormGroup;
+  wordFounded!: Word;
 
   constructor(private formBuilder: FormBuilder, private wordService: WordService, private notificationService: NotificationService) {
     this.consultarForm = this.formBuilder.group({
@@ -25,12 +28,13 @@ export class SearchnameComponent implements OnInit {
       const newName = this.consultarForm.value.name;
 
       this.wordService.getWordByName(newName).subscribe(
-        (response) => {
+        (response : Word) => {
           this.notificationService.mostrarFeedback('Palavra encontrada!', true);
+          this.wordFounded = response;
           this.consultarForm.reset();
         },
         (error) => {
-          this.notificationService.mostrarFeedback('Erro ao consultar por Id. Por favor, tente novamente.', false);
+          this.notificationService.mostrarFeedback('Erro ao consultar por palavra. Por favor, tente novamente.', false);
         }
       );
     }

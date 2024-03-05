@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="centered-title">Resultado da consulta</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table class="table-container">
+      <thead>
+        <tr>
+          <th>Identicação</th>
+          <th>Palavra</th>
+          <th>Tamanho</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ word.wordId }}</td>
+          <td>{{ word.name }}</td>
+          <td>{{ word.size }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

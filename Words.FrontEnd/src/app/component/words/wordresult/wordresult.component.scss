@@ -12,13 +12,14 @@ table {
     /* Adicionar bordas delineadas */
     padding: 8px;
     /* Espaçamento interno */
-    text-align: left;
+    text-align: center;
     /* Alinhar o texto à esquerda */
   }
 
   th {
     background-color: #f2f2f2;
     /* Cor de fundo do cabeçalho */
+    font-size: 17px;
   }
 
   tr:nth-child(even) {

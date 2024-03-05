@@ -2,6 +2,7 @@
   <!-- Cabeçalho da Tabela -->
   <thead>
     <tr>
+      <th>Identicação</th>
       <th>Palavra</th>
       <th>Tamanho</th>
     </tr>
@@ -10,6 +11,7 @@
   <!-- Corpo da Tabela -->
   <tbody>
     <tr *ngFor="let word of words">
+      <td>{{ word.wordId }}</td>
       <td>{{ word.name }}</td>
       <td>{{ word.size }}</td>
     </tr>
