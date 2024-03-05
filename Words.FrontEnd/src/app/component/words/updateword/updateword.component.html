@@ -1,3 +1,15 @@
-<p>
-  updateword works!
-</p>
+<app-wordcardresult *ngIf="wordFounded" [word]="wordFounded"></app-wordcardresult>
+<form [formGroup]="editarForm" (ngSubmit)="onSubmit()">
+  <label for="id">
+    <h2>Editar:</h2>
+  </label>
+  <div *ngIf="!wordFounded">
+    <input type="text" placeholder="Busque a palavra a ser editada" id="name" formControlName="name">
+    <button type="submit">Consultar Palavra</button>
+  </div>
+
+  <div *ngIf="wordFounded">
+    <input type="text" placeholder="Digite a nova edição palavra" id="name" formControlName="name">
+    <button type="submit" (click)="onEdit()">Editar</button>
+  </div>
+</form>

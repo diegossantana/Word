@@ -28,7 +28,7 @@ export class SearchnameComponent implements OnInit {
       const newName = this.consultarForm.value.name;
 
       this.wordService.getWordByName(newName).subscribe(
-        (response : Word) => {
+        (response: Word) => {
           this.notificationService.mostrarFeedback('Palavra encontrada!', true);
           this.wordFounded = response;
           this.consultarForm.reset();
@@ -39,5 +39,4 @@ export class SearchnameComponent implements OnInit {
       );
     }
   }
-
 }
