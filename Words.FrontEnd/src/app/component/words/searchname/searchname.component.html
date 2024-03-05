@@ -1,0 +1,7 @@
+<form [formGroup]="consultarForm" (ngSubmit)="onSubmit()">
+  <label for="id">
+    <h2>Consultar:</h2>
+  </label>
+  <input type="text" id="name" formControlName="name">
+  <button type="submit">Consultar Palavra</button>
+</form>

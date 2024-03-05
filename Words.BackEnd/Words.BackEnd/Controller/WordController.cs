@@ -15,15 +15,24 @@ namespace Words.BackEnd.Controller {
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetWords() {
-            var words = await _context.Words.ToListAsync();
-            return Ok(words);
+        [HttpGet("skip/{skip:int}/take/{take:int}")]
+        public async Task<IActionResult> GetWords([FromRoute] int skit = 0, [FromRoute] int take = 25) {
+            var total = await _context.Words.CountAsync();
+            var words = await _context.Words
+                .AsNoTracking()
+                .Skip(skit)
+                .Take(take)
+                .ToListAsync();
+            return Ok(new {
+                total, 
+                words
+            });
         }
 
         [HttpGet("id/{id}")]
         public async Task<IActionResult> GetWordById(int id) {
-            var word = await _context.Words.FindAsync(id);
+            var test = id;
+            var word = await _context.Words.FirstOrDefaultAsync(x => x.WordId == id);
             if (word == null) {
                 return NotFound();
             }
@@ -33,6 +42,7 @@ namespace Words.BackEnd.Controller {
 
         [HttpGet("name/{name}")]
         public async Task<IActionResult> GetWordByName(string name) {
+            var test = name;
             var word = await _context.Words.FirstOrDefaultAsync(w => w.Name.ToLower() == name.ToLower());
             if (word == null) {
                 return NotFound();
@@ -43,6 +53,7 @@ namespace Words.BackEnd.Controller {
 
         [HttpPost]
         public async Task<IActionResult> PostWord(Word word) {
+            word.Size = word.Name.Length;
             _context.Words.Add(word);
             await _context.SaveChangesAsync();
 

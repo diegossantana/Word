@@ -2,20 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { catchError, Observable, throwError } from 'rxjs';
-import { Word } from '../Word';
+import { Word } from '../../model/Word';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WordService {
 
-  /* private baseUrl = 'https://localhost:7005/api/Word'; */
-  private baseUrl = 'https://localhost:44363/api/Word';
+  private baseUrl = 'https://localhost:7005/api/Word';
+  /* private baseUrl = 'https://localhost:44363/api/Word'; */
 
   constructor(private http: HttpClient) { }
 
-  getWords(): Observable<Word[]> {
-    return this.http.get<Word[]>(`${this.baseUrl}`).pipe(
+  getWords(skip: number, take: number): Observable<Word[]> {
+    return this.http.get<Word[]>(`${this.baseUrl}/skip/${skip}/take/${take}`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');

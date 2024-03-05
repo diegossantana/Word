@@ -17,7 +17,7 @@ namespace Domain {
         [StringLength(44)]
         [RegularExpression(@"^[a-zA-ZÀ-ú]+$")]
         public string Name { get; set; }
-        private int Size { get; }
+        public int Size { get; set; }
 
         public Word(string name) {
             Name = name;

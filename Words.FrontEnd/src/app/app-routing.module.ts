@@ -1,13 +1,12 @@
-import { DeletewordComponent } from './words/deleteword/deleteword.component';
-import { UpdatewordComponent } from './words/updateword/updateword.component';
-import { SearchnameComponent } from './words/searchname/searchname.component';
-import { SearchidComponent } from './words/searchid/searchid.component';
-import { AddwordComponent } from './words/addword/addword.component';
-import { RegisteruserComponent } from './login/registeruser/registeruser.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { WordsComponent } from './words/words.component';
+import { DeletewordComponent } from './component/words/deleteword/deleteword.component';
+import { UpdatewordComponent } from './component/words/updateword/updateword.component';
+import { SearchnameComponent } from './component/words/searchname/searchname.component';
+import { SearchidComponent } from './component/words/searchid/searchid.component';
+import { AddwordComponent } from './component/words/addword/addword.component';
+import { RegisteruserComponent } from './component/login/registeruser/registeruser.component';
+import { WelcomeComponent } from './component/welcome/welcome.component';
+import { LoginComponent } from './component/login/login.component';
+import { WordsComponent } from './component/words/words.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
