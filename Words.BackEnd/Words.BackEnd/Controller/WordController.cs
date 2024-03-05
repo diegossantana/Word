@@ -16,11 +16,11 @@ namespace Words.BackEnd.Controller {
         }
 
         [HttpGet("skip/{skip:int}/take/{take:int}")]
-        public async Task<IActionResult> GetWords([FromRoute] int skit = 0, [FromRoute] int take = 25) {
+        public async Task<IActionResult> GetWords([FromRoute] int skip = 0, [FromRoute] int take = 25) {
             var total = await _context.Words.CountAsync();
             var words = await _context.Words
                 .AsNoTracking()
-                .Skip(skit)
+                .Skip(skip)
                 .Take(take)
                 .ToListAsync();
             return Ok(new {

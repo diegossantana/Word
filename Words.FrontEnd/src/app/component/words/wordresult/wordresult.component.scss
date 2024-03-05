@@ -1,0 +1,89 @@
+table {
+  width: 70%;
+  /* Cobrir 70% da tela */
+  border-collapse: collapse;
+  /* Colapsar as bordas da tabela */
+  margin: 0 auto;
+  /* Centralizar a tabela na tela */
+
+  th,
+  td {
+    border: 1px solid gray;
+    /* Adicionar bordas delineadas */
+    padding: 8px;
+    /* Espaçamento interno */
+    text-align: left;
+    /* Alinhar o texto à esquerda */
+  }
+
+  th {
+    background-color: #f2f2f2;
+    /* Cor de fundo do cabeçalho */
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Cor de fundo das linhas pares */
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+    /* Cor de fundo ao passar o mouse */
+  }
+}
+
+select,
+button {
+  padding: 5px;
+  /* Adicionar preenchimento interno */
+  font-size: 14px;
+  /* Tamanho da fonte */
+  border: 1px solid #ccc;
+  /* Adicionar borda */
+  border-radius: 4px;
+  /* Adicionar bordas arredondadas */
+  background-color: #fff;
+  /* Cor de fundo */
+  color: #333;
+  /* Cor do texto */
+  cursor: pointer;
+  /* Cursor ao passar o mouse */
+  width: 70px;
+  /* Definir largura fixa para ambos os elementos */
+  margin: 10px;
+  /* padding: 10px 10px; */
+}
+
+.botoes {
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  right: 0;
+  /* Alinha os botões à direita da tabela */
+  margin: 10px;
+  /* Adiciona margem para separação dos botões da borda da tabela */
+}
+
+.botoes button {
+  margin-right: 10px;
+}
+
+button {
+  background-color: purple;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gray;
+  /* Cor alterada ao passar o mouse */
+}
+
+.table-container {
+  position: relative;
+  /* Define a tabela como referência para posicionamento absoluto dos elementos internos */
+  overflow-y: auto;
+}
+

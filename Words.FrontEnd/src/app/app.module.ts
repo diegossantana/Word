@@ -1,3 +1,4 @@
+import { WordresultComponent } from './component/words/wordresult/wordresult.component';
 import { UpdatewordComponent } from './component/words/updateword/updateword.component';
 import { DeletewordComponent } from './component/words/deleteword/deleteword.component';
 import { SearchnameComponent } from './component/words/searchname/searchname.component';
@@ -24,15 +25,16 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WordsComponent,
-    LoginComponent,
-    WelcomeComponent,
     AddwordComponent,
+    AppComponent,
+    DeletewordComponent,
+    LoginComponent,
     SearchidComponent,
     SearchnameComponent,
-    DeletewordComponent,
     UpdatewordComponent,
+    WelcomeComponent,
+    WordsComponent,
+    WordresultComponent,
   ],
   imports: [
     AppRoutingModule,

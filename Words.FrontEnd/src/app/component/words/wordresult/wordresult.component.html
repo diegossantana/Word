@@ -1,0 +1,30 @@
+<table class="table-container">
+  <!-- Cabeçalho da Tabela -->
+  <thead>
+    <tr>
+      <th>Palavra</th>
+      <th>Tamanho</th>
+    </tr>
+  </thead>
+
+  <!-- Corpo da Tabela -->
+  <tbody>
+    <tr *ngFor="let word of words">
+      <td>{{ word.name }}</td>
+      <td>{{ word.size }}</td>
+    </tr>
+  </tbody>
+
+  <div class="botoes">
+    <!-- Controles de Paginação -->
+    <button *ngFor="let page of getPages()" (click)="onPageChange(page)">{{ page }}</button>
+    <!-- Controles para Seleção de Itens por Página -->
+    <select title="Selecione a quantidade de itens por página" (change)="onItemsPerPageChange($event)">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+    </select>
+  </div>
+
+</table>
+
