@@ -2,7 +2,7 @@ import { Word } from './../../../model/Word';
 import { NotificationService } from 'src/app/service/notificationservice/notification.service';
 import { WordService } from 'src/app/service/wordservice/word.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { isEmpty } from 'rxjs';
 
 @Component({
@@ -13,7 +13,6 @@ import { isEmpty } from 'rxjs';
 export class UpdatewordComponent implements OnInit {
   editarForm: FormGroup;
   wordFounded!: Word;
-  nameOld!: string;
 
   constructor(private formBuilder: FormBuilder, private wordService: WordService, private notificationService: NotificationService) {
     this.editarForm = this.formBuilder.group({

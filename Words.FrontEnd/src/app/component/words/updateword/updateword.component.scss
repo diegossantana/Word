@@ -34,6 +34,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 button:hover {
@@ -47,4 +48,40 @@ form {
 
 p {
   text-align: center;
+}
+
+table {
+  margin-top: 10px;
+  width: 70%;
+  /* Cobrir 70% da tela */
+  border-collapse: collapse;
+  /* Colapsar as bordas da tabela */
+  margin: 0 auto;
+  /* Centralizar a tabela na tela */
+
+  th,
+  td {
+    border: 1px solid gray;
+    /* Adicionar bordas delineadas */
+    padding: 8px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinhar o texto à esquerda */
+  }
+
+  th {
+    background-color: #f2f2f2;
+    /* Cor de fundo do cabeçalho */
+    font-size: 17px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Cor de fundo das linhas pares */
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+    /* Cor de fundo ao passar o mouse */
+  }
 }
