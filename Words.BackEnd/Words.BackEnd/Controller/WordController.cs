@@ -81,7 +81,7 @@ namespace Words.BackEnd.Controller {
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteWord(int id) {
             var word = await _context.Words.FindAsync(id);
 

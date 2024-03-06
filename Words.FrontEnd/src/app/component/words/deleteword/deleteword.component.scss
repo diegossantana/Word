@@ -1,0 +1,111 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10%;
+
+  text-align: center;
+
+  .h2 {
+    font-weight: bold;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* button */
+.consulta {
+  padding: 10px 20px;
+  background-color: purple;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: gray;
+  /* Cor alterada ao passar o mouse */
+}
+
+form {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+table {
+  margin-top: 10px;
+  width: 70%;
+  /* Cobrir 70% da tela */
+  border-collapse: collapse;
+  /* Colapsar as bordas da tabela */
+  margin: 0 auto;
+  /* Centralizar a tabela na tela */
+
+  th,
+  td {
+    border: 1px solid gray;
+    /* Adicionar bordas delineadas */
+    padding: 8px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinhar o texto à esquerda */
+  }
+
+  th {
+    background-color: #f2f2f2;
+    /* Cor de fundo do cabeçalho */
+    font-size: 17px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Cor de fundo das linhas pares */
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+    /* Cor de fundo ao passar o mouse */
+  }
+}
+
+.warn {
+  background-color: red;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.primary {
+  background-color: blue;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
