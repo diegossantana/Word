@@ -9,10 +9,25 @@ namespace Words.BackEnd.Controller {
     [ApiController]
     public class WordController : ControllerBase {
 
+        private HttpClient _httpClient;
+
         private readonly WordDbContext _context;
 
         public WordController(WordDbContext context) {
             _context = context;
+        }
+
+        [HttpGet("carregarPalavras")]
+        public async Task PopulationDatabase() {
+            using (_httpClient = new HttpClient()) {
+                HttpResponseMessage httpResponseMessage = await _httpClient.GetAsync("https://www.ime.usp.br/~pf/dicios/br-utf8.txt");
+                var concatedWords = await httpResponseMessage.Content.ReadAsStringAsync();
+                var wordsSpliteds = concatedWords.Split("\n").ToList();
+
+                foreach (var word in wordsSpliteds) {
+
+                }
+            }
         }
 
         [HttpGet("skip/{skip:int}/take/{take:int}")]
@@ -31,7 +46,6 @@ namespace Words.BackEnd.Controller {
 
         [HttpGet("id/{id}")]
         public async Task<IActionResult> GetWordById(int id) {
-            var test = id;
             var word = await _context.Words.FirstOrDefaultAsync(x => x.WordId == id);
             if (word == null) {
                 return NotFound();
@@ -42,7 +56,6 @@ namespace Words.BackEnd.Controller {
 
         [HttpGet("name/{name}")]
         public async Task<IActionResult> GetWordByName(string name) {
-            var test = name;
             var word = await _context.Words.FirstOrDefaultAsync(w => w.Name.ToLower() == name.ToLower());
             if (word == null) {
                 return NotFound();
