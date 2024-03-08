@@ -25,8 +25,12 @@ namespace Words.BackEnd.Controller {
                 var wordsSpliteds = concatedWords.Split("\n").ToList();
 
                 foreach (var word in wordsSpliteds) {
-
+                    if (word.Length > 1) {
+                        await _context.Words.AddAsync(new Word(word));
+                        await _context.SaveChangesAsync();
+                    }
                 }
+
             }
         }
 
@@ -39,7 +43,7 @@ namespace Words.BackEnd.Controller {
                 .Take(take)
                 .ToListAsync();
             return Ok(new {
-                total, 
+                total,
                 words
             });
         }
