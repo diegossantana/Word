@@ -1,3 +1,13 @@
+.general {
+right: 0;
+  position: relative;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  display: flexbox;
+}
+
 table {
   width: 50%;
   /* Cobrir 70% da tela */
@@ -56,12 +66,8 @@ button {
 }
 
 .botoes {
-  justify-content: center;
-  display: flex;
-  position: absolute;
-  right: 0;
   /* Alinha os botões à direita da tabela */
-  margin: 10px;
+  /* margin: 10px; */
   /* Adiciona margem para separação dos botões da borda da tabela */
 }
 
@@ -83,8 +89,7 @@ button:hover {
 }
 
 .table-container {
-  position: relative;
+  /* position: fixed; */
   /* Define a tabela como referência para posicionamento absoluto dos elementos internos */
   overflow-y: auto;
 }
-

@@ -24,13 +24,29 @@ namespace Words.BackEnd.Controller {
                 var concatedWords = await httpResponseMessage.Content.ReadAsStringAsync();
                 var wordsSpliteds = concatedWords.Split("\n").ToList();
 
+                var wordsByLetter = new Dictionary<char, List<string>>();
+                foreach (var letter in "AÁÀÃÂaáàâãBbCcDdEÉÈÊeéèêFfGgHhIÍÌÎiíìîJjKkLlMmNnOÓÒÕÔoóòõôPpQqRrSsTtUÚÙÛuúùûVvWwXxYyZz") {
+                    wordsByLetter.Add(letter, new List<string>());
+                }
+
                 foreach (var word in wordsSpliteds) {
-                    if (word.Length > 1) {
-                        await _context.Words.AddAsync(new Word(word));
-                        await _context.SaveChangesAsync();
+                    if (word.Length >= 2 && word.Length <= 46) {
+                        wordsByLetter[word[0]].Add(word);
                     }
                 }
 
+                foreach (var letter in wordsByLetter.Keys) {
+                    var wordsForLetter = wordsByLetter[letter];
+                    if (wordsForLetter.Count > 500) {
+                        wordsForLetter = wordsForLetter.Take(500).ToList();
+                    }
+
+                    foreach (var word in wordsForLetter) {
+                        await _context.AddRangeAsync(new Word(word));
+                    }
+
+                    await _context.SaveChangesAsync();
+                }
             }
         }
 
