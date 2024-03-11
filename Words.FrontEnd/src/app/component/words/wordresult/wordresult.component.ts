@@ -26,10 +26,6 @@ export class WordresultComponent implements OnInit {
     ];
   }
 
-  trackByWordId(index: number, word: Word): number {
-    return word.wordId;
-  }
-
   loadWords() {
     this.wordService.getWords(this.skip, this.take).subscribe((data: any) => {
       this.words = data.words;

@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar id="toolbar" color="primary">
   <span class="bem-vindo">
     <a routerLink="/">Bem-vindo</a>
   </span>
@@ -7,15 +7,14 @@
   </span>
   <!--   <button class="login" mat-icon-button aria-label="Login">
     <a routerLink="/login"><i class="fa fa-user" aria-hidden="true"></i></a>
-  </button> -->
+  </button>
+  -->
 </mat-toolbar>
 
-<body>
+<div>
   <router-outlet></router-outlet>
-</body>
+</div>
 
-<footer class="footer">
-  <div class="footer-content">
-    <p>&copy; Isaiah 96. Todos os direitos reservados.</p>
-  </div>
-</footer>
+<mat-toolbar class="footer">
+  <span>&copy; Isaiah 96. Todos os direitos reservados.</span>
+</mat-toolbar>

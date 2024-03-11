@@ -1,6 +1,19 @@
 <div class="general">
-  <table class="table-container">
-    <!-- Cabeçalho da Tabela -->
+  <div class="btnSlt">
+    <button *ngIf="currentPage > 1" (click)="onPageChange(1)">Primeira</button>
+    <button *ngIf="currentPage <= lastPage && currentPage != 1"
+      (click)="onPageChange(currentPage - 1)">Anterior</button>
+    <button *ngIf="currentPage < lastPage || currentPage == lastPage"
+      (click)="onPageChange(currentPage + 1)">Próxima</button>
+    <button *ngIf="lastPage > 10 && currentPage != 1" (click)="onPageChange(lastPage)">Última</button>
+
+    <select title="Selecione a quantidade de itens por página" (change)="onItemsPerPageChange($event)">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+    </select>
+  </div>
+  <table>
     <thead>
       <tr>
         <th>Identicação</th>
@@ -9,30 +22,12 @@
       </tr>
     </thead>
 
-    <!-- Corpo da Tabela -->
     <tbody>
-      <tr *ngFor="let word of words; trackBy: trackByWordId">
+      <tr *ngFor="let word of words;">
         <td>{{ word.wordId }}</td>
         <td>{{ word.name }}</td>
         <td>{{ word.size }}</td>
       </tr>
     </tbody>
-
   </table>
-  <div class="botoes">
-    <!-- Controles de Paginação -->
-    <button *ngIf="currentPage > 1" (click)="onPageChange(1)">Primeira</button>
-    <button *ngIf="currentPage <= lastPage && currentPage != 1"
-      (click)="onPageChange(currentPage - 1)">Anterior</button>
-    <button *ngIf="currentPage < lastPage || currentPage == lastPage"
-      (click)="onPageChange(currentPage + 1)">Próxima</button>
-    <button *ngIf="lastPage > 10 && currentPage != 1" (click)="onPageChange(lastPage)">Última</button>
-
-    <!-- Controles para Seleção de Itens por Página -->
-    <select title="Selecione a quantidade de itens por página" (change)="onItemsPerPageChange($event)">
-      <option value="10">10</option>
-      <option value="25">25</option>
-      <option value="50">50</option>
-    </select>
-  </div>
 </div>

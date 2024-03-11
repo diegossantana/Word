@@ -1,14 +1,11 @@
-.bem-vindo {
-  padding-left: 2%;
-  padding-right: 3%;
+#toolbar {
+  height: 50px;
+  background-color: purple;
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  span {
+    margin: 1%;
   }
-}
 
-.palavras {
   a {
     text-decoration: none;
     color: inherit;
@@ -16,7 +13,7 @@
 }
 
 .login {
-  margin-left: auto;
+  /*   margin-left: auto;
   background-color: var(--primary);
   color: white;
   padding: 8px;
@@ -27,25 +24,28 @@
   width: 20px;
   display: flex;
   align-items: center;
-  padding-right: 3%;
+  padding-right: 3%; */
 
   a {
-    text-decoration: none;
-    color: inherit;
+    /*     text-decoration: none;
+    color: inherit; */
   }
 }
 
 .footer {
+  /*
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
-  position: fixed;
   left: 0;
-  bottom: 0;
   width: 100%;
-}
+  */
 
-.footer p {
-  margin: 0;
+  margin-top: 40px;
+  height: 30px;
+  justify-content: center;
+  font-size: 16px;
+  bottom: 0;
+  position: fixed;
+
 }

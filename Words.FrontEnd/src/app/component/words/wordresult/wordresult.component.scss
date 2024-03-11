@@ -1,20 +1,24 @@
 .general {
-right: 0;
-  position: relative;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  display: flexbox;
+
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+  height: 600px;
+  max-height: 900px;
+  overflow-y: auto;
+
+  .btnSlt {
+    position: relative;
+    right: 0;
+    margin: 3px;
+  }
 }
 
+
 table {
-  width: 50%;
-  /* Cobrir 70% da tela */
   border-collapse: collapse;
-  /* Colapsar as bordas da tabela */
-  margin: 0 auto;
-  /* Centralizar a tabela na tela */
 
   th,
   td {
@@ -65,16 +69,6 @@ button {
   /* padding: 10px 10px; */
 }
 
-.botoes {
-  /* Alinha os botões à direita da tabela */
-  /* margin: 10px; */
-  /* Adiciona margem para separação dos botões da borda da tabela */
-}
-
-.botoes button {
-  margin-right: 10px;
-}
-
 button {
   background-color: purple;
   color: #fff;
@@ -86,10 +80,4 @@ button {
 button:hover {
   background-color: gray;
   /* Cor alterada ao passar o mouse */
-}
-
-.table-container {
-  /* position: fixed; */
-  /* Define a tabela como referência para posicionamento absoluto dos elementos internos */
-  overflow-y: auto;
 }
