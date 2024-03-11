@@ -64,6 +64,21 @@ namespace Words.BackEnd.Controller {
             });
         }
 
+        [HttpGet("size/skip/{skip:int}/take/{take:int}")]
+        public async Task<IActionResult> GetWordsBySize([FromRoute] int skip = 0, [FromRoute] int take = 25, int size = 2) {
+            var total = await _context.Words.CountAsync();
+            var words = await _context.Words
+                .Where(w => w.Size == size)
+                .AsNoTracking()
+                .Skip(skip)
+                .Take(take)
+                .ToListAsync();
+            return Ok(new {
+                total,
+                words
+            });
+        }
+
         [HttpGet("id/{id}")]
         public async Task<IActionResult> GetWordById(int id) {
             var word = await _context.Words.FirstOrDefaultAsync(x => x.WordId == id);
