@@ -1,3 +1,5 @@
+import { FilterresultComponent } from './component/filter/filterresult/filterresult.component';
+import { FilterComponent } from './component/filter/filter.component';
 import { WordcardresultComponent } from './component/words/wordcardresult/wordcardresult.component';
 import { WordresultComponent } from './component/words/wordresult/wordresult.component';
 import { UpdatewordComponent } from './component/words/updateword/updateword.component';
@@ -23,13 +25,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { ToastrModule } from 'ngx-toastr';
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AddwordComponent,
     AppComponent,
     DeletewordComponent,
+    FilterComponent,
+    FilterresultComponent,
     LoginComponent,
     SearchidComponent,
     SearchnameComponent,

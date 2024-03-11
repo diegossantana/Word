@@ -1,3 +1,5 @@
+import { FilterresultComponent } from './component/filter/filterresult/filterresult.component';
+import { FilterComponent } from './component/filter/filter.component';
 import { DeletewordComponent } from './component/words/deleteword/deleteword.component';
 import { UpdatewordComponent } from './component/words/updateword/updateword.component';
 import { SearchnameComponent } from './component/words/searchname/searchname.component';
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'palavras', component: WordsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegisteruserComponent },
+  { path: 'filtro', component: FilterComponent },
+  { path: 'filtrado', component: FilterresultComponent },
 
   { path: 'adicionar', component: AddwordComponent },
   { path: 'consultarId', component: SearchidComponent },

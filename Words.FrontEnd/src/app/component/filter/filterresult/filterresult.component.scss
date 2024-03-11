@@ -1,0 +1,88 @@
+.titulo {
+  text-align: center;
+  margin-top: 1.5%;
+}
+
+.general {
+
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+  height: 600px;
+  max-height: 900px;
+  overflow-y: auto;
+
+  .btnSlt {
+    position: relative;
+    right: 0;
+    margin: 3px;
+  }
+}
+
+
+table {
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px solid gray;
+    /* Adicionar bordas delineadas */
+    padding: 8px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinhar o texto à esquerda */
+  }
+
+  th {
+    background-color: #f2f2f2;
+    /* Cor de fundo do cabeçalho */
+    font-size: 17px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Cor de fundo das linhas pares */
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+    /* Cor de fundo ao passar o mouse */
+  }
+}
+
+select,
+button {
+  padding: 5px;
+  /* Adicionar preenchimento interno */
+  font-size: 14px;
+  /* Tamanho da fonte */
+  border: 1px solid #ccc;
+  /* Adicionar borda */
+  border-radius: 4px;
+  /* Adicionar bordas arredondadas */
+  background-color: #fff;
+  /* Cor de fundo */
+  color: #333;
+  /* Cor do texto */
+  cursor: pointer;
+  /* Cursor ao passar o mouse */
+  width: 70px;
+  /* Definir largura fixa para ambos os elementos */
+  margin: 10px;
+  /* padding: 10px 10px; */
+}
+
+button {
+  background-color: purple;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gray;
+  /* Cor alterada ao passar o mouse */
+}

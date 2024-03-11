@@ -1,15 +1,15 @@
-import { WordService } from 'src/app/service/wordservice/word.service';
 import { Component, OnInit } from '@angular/core';
-import { Word } from 'src/app/model/Word';
+import { WordService } from 'src/app/service/wordservice/word.service';
 
 @Component({
-  selector: 'app-wordresult',
-  templateUrl: './wordresult.component.html',
-  styleUrls: ['./wordresult.component.scss']
+  selector: 'app-filter',
+  templateUrl: './filter.component.html',
+  styleUrls: ['./filter.component.scss']
 })
-export class WordresultComponent implements OnInit {
+export class FilterComponent implements OnInit {
   words: any[] = [];
   total: number = 0;
+  size: number = 2;
   skip: number = 0;
   take: number = 10;
   currentPage: number = 1;
@@ -22,7 +22,7 @@ export class WordresultComponent implements OnInit {
   }
 
   loadWords() {
-    this.wordService.getWords(this.skip, this.take).subscribe((data: any) => {
+    this.wordService.getWordsBySize(this.skip, this.take, this.size).subscribe((data: any) => {
       this.words = data.words;
       this.total = data.total;
     })

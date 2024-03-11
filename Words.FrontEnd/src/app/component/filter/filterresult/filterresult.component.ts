@@ -1,19 +1,19 @@
-import { WordService } from 'src/app/service/wordservice/word.service';
 import { Component, OnInit } from '@angular/core';
-import { Word } from 'src/app/model/Word';
+import { WordService } from 'src/app/service/wordservice/word.service';
 
 @Component({
-  selector: 'app-wordresult',
-  templateUrl: './wordresult.component.html',
-  styleUrls: ['./wordresult.component.scss']
+  selector: 'app-filterresult',
+  templateUrl: './filterresult.component.html',
+  styleUrls: ['./filterresult.component.scss']
 })
-export class WordresultComponent implements OnInit {
-  words: any[] = [];
+export class FilterresultComponent implements OnInit {
+words: any[] = [];
   total: number = 0;
+  size: number = 2;
   skip: number = 0;
   take: number = 10;
   currentPage: number = 1;
-  lastPage: number = 10;
+  lastPage!: number;
 
   constructor(private wordService: WordService) { }
 
@@ -22,7 +22,7 @@ export class WordresultComponent implements OnInit {
   }
 
   loadWords() {
-    this.wordService.getWords(this.skip, this.take).subscribe((data: any) => {
+    this.wordService.getWordsBySize(this.skip, this.take, this.size).subscribe((data: any) => {
       this.words = data.words;
       this.total = data.total;
     })
@@ -38,6 +38,7 @@ export class WordresultComponent implements OnInit {
   onItemsPerPageChange(event: any): void {
     const itemsPerPage = event.target.value;
     this.take = parseInt(itemsPerPage, 10);
+    this.onPageChange(1);
     this.loadWords();
   }
 
