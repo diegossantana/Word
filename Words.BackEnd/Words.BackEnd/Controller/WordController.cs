@@ -73,6 +73,11 @@ namespace Words.BackEnd.Controller {
                 .Skip(skip)
                 .Take(take)
                 .ToListAsync();
+
+            if (words.Count() == 0) {
+                return NotFound();
+            }
+
             return Ok(new {
                 total,
                 words

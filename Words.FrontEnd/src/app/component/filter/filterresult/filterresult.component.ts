@@ -16,6 +16,7 @@ export class FilterresultComponent implements OnInit {
   take: number = 10;
   currentPage: number = 1;
   lastPage!: number;
+  flagReload: boolean = false;
 
   consultarForm: FormGroup;
 
@@ -32,16 +33,25 @@ export class FilterresultComponent implements OnInit {
   onSubmit() {
     if (this.consultarForm.valid) {
       this.size = this.consultarForm.value.size;
-
+      this.flagReload = true
       this.loadWords(this.skip, this.take, this.size);
     }
   }
 
   loadWords(skip?: number, take?: number, size?: number) {
-    this.wordService.getWordsBySize(this.skip, this.take, this.size).subscribe((data: any) => {
-      this.words = data.words;
-      this.total = data.total;
-    })
+    this.wordService.getWordsBySize(this.skip, this.take, this.size).subscribe(
+      (response: any) => {
+        if (this.size != 2 && this.flagReload) {
+          this.notificationService.mostrarFeedback(`Palavras com ${this.size} letras encontradas!`, true);
+          this.flagReload = false;
+        }
+        this.words = response.words;
+        this.total = response.total;
+      },
+      (error) => {
+        this.notificationService.mostrarFeedback(`Palavras com ${this.size} letras não encontradas!`, false);
+      }
+    );
   }
 
   onPageChange(page: number): void {
