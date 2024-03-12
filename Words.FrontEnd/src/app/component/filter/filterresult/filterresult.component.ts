@@ -34,7 +34,12 @@ export class FilterresultComponent implements OnInit {
     if (this.consultarForm.valid) {
       this.size = this.consultarForm.value.size;
       this.flagReload = true
-      this.loadWords(this.skip, this.take, this.size);
+      if (this.size > 1) {
+        this.loadWords(this.skip, this.take, this.size);
+      }
+      else {
+        this.notificationService.mostrarFeedback(`A quantidade de letras ${this.size} é inválida!`, false)
+      }
     }
   }
 
