@@ -24,7 +24,7 @@ export class WordService {
   }
 
   getWordsBySize(skip: number, take: number, size: number): Observable<Word[]> {
-    return this.http.get<Word[]>(`${this.baseUrl}/size/skip/${skip}/take/${take}/${size}`).pipe(
+    return this.http.get<Word[]>(`${this.baseUrl}/size/skip/${skip}/take/${take}/size/${size}`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');

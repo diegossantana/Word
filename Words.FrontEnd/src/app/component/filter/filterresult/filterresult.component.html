@@ -1,6 +1,11 @@
-<div class="titulo">
-  <h1>Filtro de Palavras por Quantidade de Letras</h1>
-</div>
+<form class="titulo" [formGroup]="consultarForm" (ngSubmit)="onSubmit()">
+  <label for="size">
+    <h2>Filtro de Palavras por Quantidade de Letras</h2>
+  </label>
+  <input type="text" placeholder="Digite a quantidade de letras" id="size" formControlName="size">
+  <button type="submit">Consultar palavra por tamanho</button>
+</form>
+
 <!-- TODO
   FORM PARA REALIZAR A PESQUISA DE ACORDO COM A NECESSIDADE DO USUÁRIO
 
