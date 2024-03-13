@@ -3,6 +3,7 @@ using Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Words.BackEnd.Controller {
     [Route("api/[controller]")]
@@ -15,6 +16,23 @@ namespace Words.BackEnd.Controller {
 
         public WordController(WordDbContext context) {
             _context = context;
+        }
+
+        [HttpGet("relatorio")]
+        public async Task<IActionResult> GetReportGeneral() {
+            var wordsReport = new Dictionary<int, int>();
+            for (int key = 2; key <= 46; key++) {
+                int value = await _context.Words.Where(w => w.Size == key).CountAsync();
+                if (value != 0) {
+                    wordsReport.Add(key, value);
+                }
+            }
+
+            if (wordsReport.Count == 0) { return NotFound(); }
+
+            var orderedEnumerable = wordsReport.OrderBy(s => s.Value);
+
+            return Ok(orderedEnumerable);
         }
 
         [HttpGet("carregarPalavras")]
