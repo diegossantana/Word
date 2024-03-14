@@ -18,23 +18,6 @@ namespace Words.BackEnd.Controller {
             _context = context;
         }
 
-        [HttpGet("relatorio")]
-        public async Task<IActionResult> GetReportGeneral() {
-            var wordsReport = new Dictionary<int, int>();
-            for (int key = 2; key <= 46; key++) {
-                int value = await _context.Words.Where(w => w.Size == key).CountAsync();
-                if (value != 0) {
-                    wordsReport.Add(key, value);
-                }
-            }
-
-            if (wordsReport.Count == 0) { return NotFound(); }
-
-            var orderedEnumerable = wordsReport.OrderBy(s => s.Value);
-
-            return Ok(orderedEnumerable);
-        }
-
         [HttpGet("carregarPalavras")]
         public async Task PopulationDatabase() {
             using (_httpClient = new HttpClient()) {
