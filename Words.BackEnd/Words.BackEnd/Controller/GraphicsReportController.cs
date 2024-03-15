@@ -6,11 +6,10 @@ using Microsoft.EntityFrameworkCore;
 namespace Words.BackEnd.Controller {
     [Route("api/[controller]")]
     [ApiController]
-    public class ReportController : ControllerBase {
-
+    public class GraphicsReportController : ControllerBase {
         private readonly WordDbContext _context;
 
-        public ReportController(WordDbContext context) {
+        public GraphicsReportController(WordDbContext context) {
             _context = context;
         }
 
@@ -34,11 +33,7 @@ namespace Words.BackEnd.Controller {
                 wordOrdered.Add(word.Key, word.Value);
             }
 
-            var pdfGenerator = new PdfGenerator();
-
-            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered, "Lista de items ordenados de forma crescente por total de palavras e seus caracteres.\n\n");
-
-            return Ok(document);
+            return Ok(wordOrdered.ToList());
         }
 
         [HttpGet("relatorioOrdenadoPorCaracteres")]
@@ -61,11 +56,7 @@ namespace Words.BackEnd.Controller {
                 wordOrdered.Add(word.Key, word.Value);
             }
 
-            var pdfGenerator = new PdfGenerator();
-
-            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered, "Lista de items ordenados de forma crescente por caracteres e total de palavras.\n\n");
-
-            return Ok(document);
+            return Ok(wordOrdered.ToList());
         }
 
         [HttpGet("relatorioMaiorValor")]
@@ -82,19 +73,15 @@ namespace Words.BackEnd.Controller {
 
             var maxValue = wordsReport.Max(s => s.Value);
 
-            var wordOrdered = new Dictionary<int, int>();
+            var maxValueItem = new Dictionary<int, int>();
 
             IEnumerable<KeyValuePair<int, int>> enumerable = wordsReport.Where(v => v.Value == maxValue);
 
             foreach (var word in enumerable) {
-                wordOrdered.Add(word.Key, word.Value);
+                maxValueItem.Add(word.Key, word.Value);
             }
-
-            var pdfGenerator = new PdfGenerator();
-
-            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered, "Maior quantidade de palavras por caracter.\n\n");
-
-            return Ok(document);
+            
+            return Ok(maxValueItem);
         }
 
         [HttpGet("relatorioMenorValor")]
@@ -109,21 +96,17 @@ namespace Words.BackEnd.Controller {
 
             if (wordsReport.Count == 0) { return NotFound(); }
 
-            var maxValue = wordsReport.Min(s => s.Value);
+            var minValue = wordsReport.Min(s => s.Value);
 
-            var wordOrdered = new Dictionary<int, int>();
+            var minValueItem = new Dictionary<int, int>();
 
-            IEnumerable<KeyValuePair<int, int>> enumerable = wordsReport.Where(v => v.Value == maxValue);
+            IEnumerable<KeyValuePair<int, int>> enumerable = wordsReport.Where(v => v.Value == minValue);
 
             foreach (var word in enumerable) {
-                wordOrdered.Add(word.Key, word.Value);
+                minValueItem.Add(word.Key, word.Value);
             }
 
-            var pdfGenerator = new PdfGenerator();
-
-            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered, "Menor quantidade de palavras por caracter.\n\n");
-
-            return Ok(document);
+            return Ok(minValueItem);
         }
     }
 }
