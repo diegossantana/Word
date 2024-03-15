@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Infrastructure {
     public class PdfGenerator {
-        public iTextSharp.text.Document PdfReportGenerate(Dictionary<int, int> report) {
+        public iTextSharp.text.Document PdfReportGenerate(Dictionary<int, int> report, string subTituloMetodo = "") {
             //configuração da margem pixel por milímetro
             var pxPorMm = 72 / 25.2F;
 
@@ -35,7 +35,7 @@ namespace Infrastructure {
             pdf.Add(titulo);
 
             //definição do título, sua fonte e alinhamento
-            Paragraph subtitulo = InserirSubTitulo(fonteParagrafo, "Lista de items ordenados por quantidade\n\n");
+            Paragraph subtitulo = InserirSubTitulo(fonteParagrafo, subTituloMetodo);
 
             //adição da formatação ao documento
             pdf.Add(subtitulo);

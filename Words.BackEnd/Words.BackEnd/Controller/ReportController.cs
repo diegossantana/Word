@@ -36,7 +36,7 @@ namespace Words.BackEnd.Controller {
 
             var pdfGenerator = new PdfGenerator();
 
-            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered);
+            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered, "Lista de items ordenados de forma crescente por total de palavras e seus caracteres.\n\n");
 
             return Ok(document);
         }
@@ -63,7 +63,7 @@ namespace Words.BackEnd.Controller {
 
             var pdfGenerator = new PdfGenerator();
 
-            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered);
+            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered, "Lista de items ordenados de forma crescente por caracteres e total de palavras.\n\n");
 
             return Ok(document);
         }
@@ -92,7 +92,7 @@ namespace Words.BackEnd.Controller {
 
             var pdfGenerator = new PdfGenerator();
 
-            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered);
+            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered, "Maior quantidade de palavras por caracter.\n\n");
 
             return Ok(document);
         }
@@ -121,7 +121,7 @@ namespace Words.BackEnd.Controller {
 
             var pdfGenerator = new PdfGenerator();
 
-            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered);
+            iTextSharp.text.Document document = pdfGenerator.PdfReportGenerate(wordOrdered, "Menor quantidade de palavras por caracter.\n\n");
 
             return Ok(document);
         }
