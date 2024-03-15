@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace Words.BackEnd.Controller {
     [Route("api/[controller]")]
@@ -33,7 +34,9 @@ namespace Words.BackEnd.Controller {
                 wordOrdered.Add(word.Key, word.Value);
             }
 
-            return Ok(wordOrdered.ToList());
+            string wordJson = JsonConvert.SerializeObject(wordOrdered);
+
+            return Ok(wordJson);
         }
 
         [HttpGet("relatorioOrdenadoPorCaracteres")]
@@ -56,7 +59,9 @@ namespace Words.BackEnd.Controller {
                 wordOrdered.Add(word.Key, word.Value);
             }
 
-            return Ok(wordOrdered.ToList());
+            string wordJson = JsonConvert.SerializeObject(wordOrdered);
+
+            return Ok(wordJson);
         }
 
         [HttpGet("relatorioMaiorValor")]
@@ -80,8 +85,10 @@ namespace Words.BackEnd.Controller {
             foreach (var word in enumerable) {
                 maxValueItem.Add(word.Key, word.Value);
             }
-            
-            return Ok(maxValueItem);
+
+            string wordJson = JsonConvert.SerializeObject(maxValueItem);
+
+            return Ok(wordJson);
         }
 
         [HttpGet("relatorioMenorValor")]
@@ -106,7 +113,9 @@ namespace Words.BackEnd.Controller {
                 minValueItem.Add(word.Key, word.Value);
             }
 
-            return Ok(minValueItem);
+            string wordJson = JsonConvert.SerializeObject(minValueItem);
+
+            return Ok(wordJson);
         }
     }
 }

@@ -7,8 +7,8 @@ import { WordInfo } from 'src/app/model/WordInfo';
   providedIn: 'root'
 })
 export class PdfreportService {
-  private baseUrl = 'https://localhost:7005/api/Word';
-  /* private baseUrl = 'https://localhost:44363/api/Word'; */
+  private baseUrl = 'https://localhost:7005/api/PdfReport';
+  /* private baseUrl = 'https://localhost:44363/api/PdfReport'; */
 
   constructor(private http: HttpClient) { }
 

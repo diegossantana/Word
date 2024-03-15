@@ -8,13 +8,13 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class GraphicsreportService {
 
-  private baseUrl = 'https://localhost:7005/api/Word';
-  /* private baseUrl = 'https://localhost:44363/api/Word'; */
+  private baseUrl = 'https://localhost:7005/api/GraphicsReport';
+  /* private baseUrl = 'https://localhost:44363/api/GraphicsReport'; */
 
   constructor(private http: HttpClient) { }
 
-  GetReportByValue(): Observable<WordInfo[]> {
-    return this.http.get<WordInfo[]>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+  GetReportByValue(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');
@@ -22,8 +22,8 @@ export class GraphicsreportService {
     );
   }
 
-  GetReportByKey(): Observable<WordInfo[]> {
-    return this.http.get<WordInfo[]>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+  GetReportByKey(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/relatorioOrdenadoPorCaracteres`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');
@@ -31,8 +31,8 @@ export class GraphicsreportService {
     );
   }
 
-  GetReportByMaxValue(): Observable<WordInfo> {
-    return this.http.get<WordInfo>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+  GetReportByMaxValue(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');
@@ -40,8 +40,8 @@ export class GraphicsreportService {
     );
   }
 
-  GetReportByMinValue(): Observable<WordInfo> {
-    return this.http.get<WordInfo>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+  GetReportByMinValue(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');

@@ -19,6 +19,8 @@ namespace Words.BackEnd {
             builder.Services.AddControllers();
 
             builder.Services.AddScoped<WordController>();
+            builder.Services.AddScoped<GraphicsReportController>();
+            builder.Services.AddScoped<PdfReportController>();
 
             builder.Services.AddCors(options => {
                 options.AddPolicy("AllowAll",

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Word } from '../../model/Word';
 

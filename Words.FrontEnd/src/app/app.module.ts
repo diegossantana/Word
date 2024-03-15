@@ -1,3 +1,4 @@
+import { ReportComponent } from './component/report/report.component';
 import { FilterresultComponent } from './component/filter/filterresult/filterresult.component';
 import { FilterComponent } from './component/filter/filter.component';
 import { WordcardresultComponent } from './component/words/wordcardresult/wordcardresult.component';
@@ -35,6 +36,7 @@ import { CommonModule } from '@angular/common';
     FilterComponent,
     FilterresultComponent,
     LoginComponent,
+    ReportComponent,
     SearchidComponent,
     SearchnameComponent,
     UpdatewordComponent,
