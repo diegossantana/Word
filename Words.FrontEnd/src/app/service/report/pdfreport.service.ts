@@ -12,8 +12,8 @@ export class PdfreportService {
 
   constructor(private http: HttpClient) { }
 
-  GetReportByValue(): Observable<WordInfo[]> {
-    return this.http.get<WordInfo[]>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+  GetReportByValue(): Observable<Blob> {
+    return this.http.get<Blob>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');
@@ -21,8 +21,8 @@ export class PdfreportService {
     );
   }
 
-  GetReportByKey(): Observable<WordInfo[]> {
-    return this.http.get<WordInfo[]>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+  GetReportByKey(): Observable<Blob> {
+    return this.http.get<Blob>(`${this.baseUrl}/relatorioOrdenadoPorCaracteres`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');
@@ -30,8 +30,8 @@ export class PdfreportService {
     );
   }
 
-  GetReportByMaxValue(): Observable<WordInfo> {
-    return this.http.get<WordInfo>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+  GetReportByMaxValue(): Observable<Blob> {
+    return this.http.get<Blob>(`${this.baseUrl}/relatorioMaiorValor`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');
@@ -39,8 +39,8 @@ export class PdfreportService {
     );
   }
 
-  GetReportByMinValue(): Observable<WordInfo> {
-    return this.http.get<WordInfo>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+  GetReportByMinValue(): Observable<Blob> {
+    return this.http.get<Blob>(`${this.baseUrl}/relatorioMenorValor`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');

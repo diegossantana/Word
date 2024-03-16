@@ -27,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { ReportcardresultComponent } from './component/report/reportcardresult/reportcardresult/reportcardresult.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CommonModule } from '@angular/common';
     FilterresultComponent,
     LoginComponent,
     ReportComponent,
+    ReportcardresultComponent,
     SearchidComponent,
     SearchnameComponent,
     UpdatewordComponent,

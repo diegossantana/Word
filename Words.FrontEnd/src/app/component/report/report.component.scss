@@ -1,5 +1,59 @@
-.row {
-  width: 40%;
-  height: 40%;
-  margin: 5%;
+.conteiner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  width: 80%;
+}
+
+div {
+  padding: 10px;
+  margin: 10px;
+}
+
+h2 {
+  text-align: center;
+  display: inline-flex;
+}
+
+.graphics {
+  display: flex;
+}
+
+.canva {
+  width: 400px;
+  height: 400px;
+}
+
+h1 {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.MinMax {
+  display: flex;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: purple;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: gray;
+  /* Cor alterada ao passar o mouse */
+}
+
+form {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
 }

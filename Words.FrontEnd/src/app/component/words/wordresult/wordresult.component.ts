@@ -39,6 +39,7 @@ export class WordresultComponent implements OnInit {
     const itemsPerPage = event.target.value;
     this.take = parseInt(itemsPerPage, 10);
     this.loadWords();
+    this.onPageChange(1);
   }
 
   getPages(): number[] {

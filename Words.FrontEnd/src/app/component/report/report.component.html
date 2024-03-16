@@ -1,6 +1,34 @@
-<div class="row">
-  <div class="col-lg-6">
-    <h2>Pie Chart</h2>
-    <canvas id="piechart"></canvas>
+<h1>Relatórios</h1>
+<h3>Baixar reltório em pdf</h3>
+<form>
+  <button type="button" (click)="quantidadeCaracteres()">Lista por quantidade de Caracteres</button>
+  <button type="button" (click)="quantidadePalavras()">Lista por quantidade de Palavras</button>
+  <button type="button" (click)="menorCaracter()">Menor quantidade por caracter</button>
+  <button type="button" (click)="maiorCaracter()">Maior quantidade por caracter</button>
+</form>
+<div class="conteiner">
+
+  <div class="row">
+
+    <div class="MinMax">
+      <app-reportcardresult *ngIf="wordInfoMin && titleTsMin" [word]="wordInfoMin"
+        [title]="titleTsMin"></app-reportcardresult>
+
+      <app-reportcardresult *ngIf="wordInfoMax && titleTsMin" [word]="wordInfoMax"
+        [title]="titleTsMax"></app-reportcardresult>
+    </div>
+
+    <div class="graphics">
+      <div class="canva">
+        <h2>Gráfico Donut</h2>
+        <canvas id="doughnutchart"></canvas>
+      </div>
+
+      <div class="canva">
+        <h2>Gráfico em Linha</h2>
+        <canvas id="linechart"></canvas>
+      </div>
+    </div>
   </div>
+
 </div>

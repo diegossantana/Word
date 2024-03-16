@@ -100,6 +100,17 @@ namespace Infrastructure {
             }
         }
 
+        public void ExcluirPdf() {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string[] filesCurrentDirectory = Directory.GetFiles(currentDirectory);
+            string[] pdfFilesCurrentDirectory = Array.FindAll(filesCurrentDirectory, file => file.EndsWith(".pdf"));
+            int lengthPdfFiles = pdfFilesCurrentDirectory.Length;
+            for (int i = 0; i < lengthPdfFiles; i++)
+            {
+                File.Delete(pdfFilesCurrentDirectory[i]);
+            }
+        }
+
         private void AdicionarLink(iTextSharp.text.Document pdf, PdfWriter writer, float pxPorMm) {
             var fonteLink = new iTextSharp.text.Font(BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, false), 9.9F, Font.NORMAL, BaseColor.Blue);
             var link = new Chunk("Canal do dev Diego S. Santana", fonteLink);

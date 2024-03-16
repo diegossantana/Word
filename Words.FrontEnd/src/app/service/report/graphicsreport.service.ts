@@ -32,7 +32,7 @@ export class GraphicsreportService {
   }
 
   GetReportByMaxValue(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/relatorioMaiorValor`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');
@@ -41,7 +41,7 @@ export class GraphicsreportService {
   }
 
   GetReportByMinValue(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/relatorioOrdenadoPorQuantidade`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/relatorioMenorValor`).pipe(
       catchError(error => {
         console.error('Ocorreu um erro:', error);
         return throwError('Ocorreu um erro ao obter as palavras.');
