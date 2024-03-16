@@ -4,7 +4,7 @@
 
 ## Instalação
 
-Necessária a instalação do .net core 6 e angular 16.
+Necessária a instalação do .Net Core 6, Sqlite  e Angular 16.
 
 ## Recursos
 
@@ -12,3 +12,6 @@ Necessária a instalação do .net core 6 e angular 16.
 * Consulta de palavras.
 * Edição das palavras adicionadas.
 * Exclusão das palavras adicionadas.
+
+* Geração de relatórios gráficos e em pdf das informações.
+
